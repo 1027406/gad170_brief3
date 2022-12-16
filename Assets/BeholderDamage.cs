@@ -9,7 +9,7 @@ public class BeholderDamage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(wall);
+    
     }
 
     // Update is called once per frame
@@ -18,20 +18,23 @@ public class BeholderDamage : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Inside the zone");
-        /*if (other.gameObject.name == "player") {
+        
+        if (other.gameObject.name == "character")
+        {
+            Debug.Log("Inside the zone");
             other.gameObject.GetComponent<PlayerStats>().poisoned = true;
-        }*/
+        }
     }
 
-    private void OnTriggerLeave(Collider other)
+    void OnTriggerLeave(Collider other)
     {
-        /*
-            if (other.gameObject.name == "player") {
-                other.gameObject.GetComponent<PlayerStats>().poisoned = false;
-            }
-        */
+        
+        if (other.gameObject.name == "character")
+        {
+            other.gameObject.GetComponent<PlayerStats>().poisoned = false;
+        }
+        
     }
 }
