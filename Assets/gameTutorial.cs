@@ -5,7 +5,7 @@ using TMPro;
 
 public class gameTutorial : MonoBehaviour
 {
-    public GameObject text;
+    public GameObject terminator;
     public TextMeshProUGUI textAppear; 
     public string textString;
 
@@ -23,14 +23,18 @@ public class gameTutorial : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "character")
+        if(other.gameObject.name == "character")
         {
-            text.SetActive(false);
-        }
-
-    void OnTriggerExit()
-        {
-            text.SetActive(false);
+            terminator.SetActive(true);
+            textAppear.text = textString;
         }
     }
+    void OnTriggerExit(Collider other)
+        {
+            if(other.gameObject.name == "character")
+            {
+            terminator.SetActive(false);
+            }
+        
+        }
 }

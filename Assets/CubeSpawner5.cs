@@ -24,7 +24,7 @@ public class CubeSpawner5 : MonoBehaviour
     }
     void CubeSpawner5Appears()
     {
-        Debug.Log("This is what it feels like to spawn 3 cubes");
+        Debug.Log("This is what it feels like to spawn 2 cubes");
         gameObject.GetComponent<MeshRenderer>().enabled = true;
     }
 
